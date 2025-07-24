@@ -1,0 +1,52 @@
+# 任务配置文件
+[meta]
+version = "1.0"
+last_updated = "2024-01-15T10:30:00Z"
+
+[[tasks]]
+id = "task_001"
+title = "完成项目文档"
+description = "编写技术方案和流程图"
+status = "已完成"
+priority = "high"
+created = "2024-01-15T09:00:00Z"
+estimated_time = "2h"
+tags = ["文档", "项目"]
+dependencies = []
+subtasks = [
+    "整理项目背景",
+    "编写技术方案", 
+    "制作流程图"
+]
+
+[[tasks]]
+id = "task_002"
+title = "leetcode练习"
+description = "习惯rust的语法，熟悉rust的特性"
+status = "进行中"
+priority = "medium"
+created = "2025-07-24T9:25:00Z"
+estimated_time = "1h"
+tags = ["代码", "leetcode"]
+dependencies = []
+subtasks = []
+
+# 工作流配置
+[workflow]
+default_priority = "medium"
+auto_categorize = true
+ai_enhancement = true
+reminder_enabled = true
+
+# AI配置
+[ai]
+model = "gpt-3.5-turbo"
+max_tokens = 1000
+temperature = 0.7
+enhancement_prompt = """
+你是任务管理专家，请完善以下任务描述：
+1. 添加具体的子任务
+2. 估算合理的时间
+3. 识别依赖关系
+4. 建议优先级
+"""
